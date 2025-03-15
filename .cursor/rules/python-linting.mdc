@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Run the following linting tool for specified files/folders:
+```
+lint <file_or_folder>
+```
+Fix the errors pointed out by the linters.
+While fixing errors make sure to follow [python-rules.mdc](mdc:.cursor/rules/python-rules.mdc)
+
+Remove redundant comments. Only leave comments based on following criteria:
+* Comment describes complex algorithms or non-obvious code. 
+* Comment explains "why" rather than "what". i.e. the comment provides reasoning behind the code
+* TODO comments should be left in the code unless the TODO comment is implemented already or no longer relevant

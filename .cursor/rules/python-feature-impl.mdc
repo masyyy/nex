@@ -1,0 +1,28 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Create an implementation plan in plan.md for the feature described.
+Make sure the plan follows any existing instructions of project struture if those are available. Also make sure the plan is clear on the folder structure i.e. what files are added where
+
+Make sure the plan accounts for [python-rules.mdc](mdc:.cursor/rules/python-rules.mdc)
+
+The plan structure should be as follows:
+
+# Overview
+
+Brief overview of critical requirements of the feature as a bullet point list.
+
+# New dependencies
+
+List new dependencies if any as a bullet point list. Also make sure to specify where new dependencies need to be added.
+
+# Implementation details
+
+Here you can add code or data models for critical parts of the feature. Also here is where you can provide the folder structure depicting where any added files will go.
+
+# Test plan
+
+Here you add the plan for how to test the feature, unit tests, integration tests etc as a bullet point list.
+

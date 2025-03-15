@@ -1,0 +1,28 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+* Remember to source the venv when running commands from the project
+* The program can be ran with `nex`command
+```
+nex ingest "<filename>"
+nex drop-db
+nex "<prompt anything>"
+```
+* Linter can be ran with the following command: `lint <path_to_file_or_directory>`
+* DO NOT TOUCH .env file
+
+## This is the top level directory structure for the project:
+```
+pyproject.toml              # Project metadata and dependencies
+cli/                        # Command-line interface
+├── main.py                 # CLI entry point
+├── commands/               # Individual CLI commands
+└── tools/                  # CLI utility tools
+common/                     # Shared utilities
+graphlib/                   # Core knowledge graph implementation
+└── database/               # Database layer
+    ├── models/             # Database models
+    └── repositories/       # Database repositories
+```

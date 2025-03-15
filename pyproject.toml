@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexus"
+version = "0.1.0"
+description = "Knowledge Graph Agent with LLM-powered exploration"
+requires-python = ">=3.13"
+dependencies = [
+    "sqlalchemy",
+    "pydantic>=2.4.0",
+    "pydantic-settings",
+    "rich",
+    "openai>=1.6.0",
+    "python-dotenv",
+    "mariadb>=1.1.5",  # MariaDB connector for SQLAlchemy
+    "PyMuPDF",         # For PDF processing (better text extraction)
+    "numpy",           # For vector operations
+]
+
+[project.scripts]
+nex = "cli.main:main"
+lint = "lint:main"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+]
+
+[tool.setuptools]
+packages = ["cli", "cli.commands", "cli.tools", "common", "kgraphlib", "kgraphlib.database"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_return_any = true
+warn_unreachable = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "N", "UP", "ANN", "S", "BLE", "A", "COM", "C4", "DTZ", "T10", "EM", "ISC", "ICN", "G", "INP", "PIE", "T20", "PT", "Q", "RSE", "RET", "SLF", "SIM", "TID", "TCH", "ARG", "PTH", "ERA", "PD", "PGH", "PL", "TRY", "NPY", "RUF"]
+ignore = [
+    "BLE001",  # Do not catch blind exception
+    "TRY301",  # Abstract raise to an inner function
+    "G004",    # Logging statement uses f-string
+    "TRY400",  # Use logging.exception instead of logging.error
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Ignore unused imports in __init__.py files

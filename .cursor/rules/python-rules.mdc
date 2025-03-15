@@ -1,0 +1,10 @@
+---
+description: 
+globs: *.py
+alwaysApply: false
+---
+Rules for python development:
+* A function should have no more than one try/except block. DO NOT nest try/except blocks unless specified
+* Use strict type hinting in python
+* Use python 3.13, so no need to import List, Dict or Option, use the built in type annotation for those instead.
+* Prioritize using Pydantic models for modelling data instead of dicts of type dict[str, Any] if possible
